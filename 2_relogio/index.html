@@ -1,0 +1,75 @@
+<!-- 
+    Criando Relógio Digital usando HTML,CSS E JAVAScript
+    By: Sílvio Francisco
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="relogio">
+        <div class="dentro">
+            <div class="dias-semana">
+                <span id="DOM" class="active">DOM</span>
+                <span id="SEG" >SEG</span>
+                <span id="TER" >TER</span>
+                <span id="QUA" >QUA</span>
+                <span id="QUI" >QUI</span>
+                <span id="SEX" >SEX</span>
+                <span id="SAB" >SÁB</span>
+            </div>
+            <br>
+            <div class="tempo">
+                <span id="hora" >01</span>:
+                <span id="min" >01</span>:
+                <span id="seg" >01</span>:
+                <span id="ampm" >AM</span>
+            </div>
+            <div class="data">
+                <span class="icon" >
+                    <img src="https://codetheworld.io/wp-content/uploads/2023/11/eYxgJJX_icon_cal.png" alt="cal" />
+                </span>
+                <span id="ano" >2023</span>
+                <span id="mes" >JAN</span>
+                <span id="dia" >01</span>
+            </div>
+        </div>
+    </div>
+
+<!--CÓDIGO JAVA SCRIPT-->>
+    <script>
+        function relogio() {
+            const diasSemana = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'];
+            const meses = ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"];
+            const hoje = new Date();
+            const h = hoje.getHours();
+            const m = hoje.getMinutes();
+            const s = hoje.getSeconds();
+
+            const amp = h < 12 ? 'MANHÃ' : 'NOITE';
+            const dia = hoje.getDay();
+            const date = hoje.getDate();
+            const mes = hoje.getMonth();
+            const ano = hoje.getFullYear();
+
+            document.getElementById('hora').textContent = zeroPadding(h);
+            document.getElementById('min').textContent = zeroPadding(m);
+            document.getElementById('seg').textContent = zeroPadding(s);
+            document.getElementById('ampm').textContent = amp;
+
+            document.querySelectorAll('.dias-semana span').forEach(span => span.classList.remove('active'));
+            document.getElementById(diasSemana[dia]).classList.add('active');
+            document.getElementById('ano').textContent = ano;
+            document.getElementById('mes').textContent = meses[mes];
+            document.getElementById('dia').textContent = zeroPadding(date);
+        }
+
+        function zeroPadding(num) {
+            return num.toString().padStart(2, '0');
+        }
+
+        setInterval(relogio, 1000);
+    </script>
+</body>
+</html>

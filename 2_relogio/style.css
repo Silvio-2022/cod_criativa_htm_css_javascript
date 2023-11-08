@@ -1,0 +1,61 @@
+/* Tik Tok - Nosso Código  este é o estilo*/
+
+body {
+    background-color: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 100vh;*/
+}
+
+.relogio{
+    width: 450px;
+    background-color: #333;
+    color: #fff;
+    font-family: 'Quicksand', 'Helvetica',Arial, sans-serif;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.dentro{
+    width: 100%;
+    background-color: #222;
+    padding: 35px 0;
+    text-align: center;
+}
+
+.dias-semana{
+    color: #ffffff33;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+.active{
+    color: #ffffff;
+}
+
+.tempo{
+    font-size: 2.5rem;
+    margin-top: 10px;
+}
+
+#ampm{
+    font-size: 1.5rem;
+}
+
+.data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.icon img{
+    width: 30px;
+    height: 30px;
+}
